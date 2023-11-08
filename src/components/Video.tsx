@@ -17,7 +17,7 @@ const Video = ({ video }: { video: VideoObject }) => {
 
   return (
     <>
-      <div className="relative aspect-video bg-white sm:rounded-[12px] w-[100%] transition-all duration-300 ease-in-out flex justify-center items-center">
+      <div className="relative aspect-video bg-black sm:rounded-[12px] w-[100%] transition-all duration-300 ease-in-out flex justify-center items-center">
         {loading && (
           <div
             role="status"

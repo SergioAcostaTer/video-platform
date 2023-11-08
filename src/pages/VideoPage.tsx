@@ -2,7 +2,7 @@ import Video from "../components/Video";
 import { useParams } from "react-router-dom";
 import { getRelatedVideos } from "../services/videoServices";
 import { getVideoById } from "../services/videoServices";
-import { Link } from "react-router-dom";
+import { VideoPreview } from "../components/VideoPreview";
 
 const VideoPage = () => {
   const { id } = useParams();
@@ -25,7 +25,6 @@ const VideoPage = () => {
 
             <div className="bg-[#272727] p-4 bg-opacity-50 text-white rounded-lg hover:bg-[#3F3F3F] transition-all duration-100 ease-in-out cursor-pointer">
               <p>{videoObject?.user.name}</p>
-              <p>{videoObject?.views}</p>
             </div>
           </div>
         </div>
@@ -33,13 +32,7 @@ const VideoPage = () => {
         <div className="w-[100%] sm:w-[33%] xl:w-[40%] flex flex-col gap-4">
           {getRelatedVideos(id || "").map((videoObject) => {
             return (
-              <Link to={`/video/${videoObject.id}`}>
-                <div className="bg-black p-4 bg-opacity-50 text-white rounded-lg">
-                  <h1 className="text-4xl font-bold">{videoObject.title}</h1>
-                  <p>{videoObject.user.name}</p>
-                  <p>{videoObject.views}</p>
-                </div>
-              </Link>
+              <VideoPreview video={videoObject} />
             );
           })}
         </div>

@@ -1,19 +1,13 @@
-import { Link } from "react-router-dom";
 import { videoObjects } from "../data";
+import { VideoPreview } from "../components/VideoPreview";
 
 export const Home = () => {
   return (
     <>
-      <div className="sm:p-8 flex gap-8 flex-col sm:flex-row p-0">
+      <div className="sm:p-8 flex gap-8 flex-col sm:flex-row p-0 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {videoObjects.map((videoObject) => {
           return (
-            <Link to={`/video/${videoObject.id}`}>
-              <div>
-                <h1 className="text-4xl font-bold">{videoObject.title}</h1>
-                <p>{videoObject.user.name}</p>
-                <p>{videoObject.views}</p>
-              </div>
-            </Link>
+            <VideoPreview video={videoObject} />
           );
         })}
       </div>
