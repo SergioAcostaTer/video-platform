@@ -20,7 +20,7 @@ const Header = ({ children }: { children: React.ReactNode }) => {
             <input
               type="text"
               placeholder="Search"
-              className="bg-[#272727] text-white rounded-lg px-4 py-2 w-[400px] lg:w-[500px] xl:w-[600px]"
+              className="bg-[#272727] text-white rounded-lg px-4 py-2 w-[150px] lg:w-[500px] xl:w-[600px]"
               value={searchValue}
               onChange={handleSearchInputChange}
             />
